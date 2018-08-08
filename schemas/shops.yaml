@@ -1,0 +1,52 @@
+Shop:
+  description: The Shop common data.
+  required: 
+    - id
+    - name
+    - lat
+    - lng
+    - like
+    - dislike
+    - stars
+  properties:
+    id:
+      type: integer
+      example: 3
+      format: int32
+      description: Shop ID
+    name:
+      type: string
+      example: 豪享來
+      description: Shop name, 店名
+    lat:
+      type: number
+      format: float
+      example: 25.0119602
+      description: Latitude, 經度
+    lng:
+      type: number
+      format: float
+      example: 121.541108
+      description: Longitude, 緯度
+    like:
+      type: integer
+      format: int32
+      example: 10
+      description: like count, 按讚數
+    dislike:
+      type: integer
+      format: int32
+      example: 1
+      description: dislike count, 按不喜歡數
+    stars:
+      type: integer
+      format: int32
+      example: 4
+      description: auto compute value (1~5), 電腦自動算出的星級 1~5 星
+Shops:
+  type: array
+  items:
+    description: |
+      Shops array  
+      店家陣列
+    $ref: "#Shop"

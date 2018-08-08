@@ -1,10 +1,8 @@
 Error:
   required:
-    - code
-    - message
+    - error
   properties:
-    code:
-      type: integer
-      format: int32
-    message:
+    error:
       type: string
+      example: index out of range.
+      description: real error message in there.

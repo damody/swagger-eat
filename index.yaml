@@ -1,13 +1,19 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Swagger Petstore
+  title: Find eat price
+  description: side project
+  contact:
+    name: "damody"
+    url: "https://www.facebook.com/Remake.AON/"
+    email: "t1238142000@gmail.com"
   license:
     name: MIT
+    url: http://opensource.org/licenses/MIT
 servers:
-  - url: http://petstore.swagger.io/v1
+  - url: https://find-eat-price.com/v1
 paths:
-  /pets:
-    $ref: /paths/pets/index.yaml
-  /pets/{petId}:
-    $ref: /paths/pets/specified.yaml
+  /shops/search:
+    $ref: /paths/shops/search.yaml
+  /menus/search:
+    $ref: /paths/menus/search.yaml

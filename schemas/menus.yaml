@@ -1,0 +1,52 @@
+Menu:
+  description: The Menu common data.
+  required: 
+    - id
+    - name
+    - shop
+    - like
+    - dislike
+  properties:
+    id:
+      type: integer
+      example: 3
+      format: int32
+      description: Menu ID
+    name:
+      type: string
+      example: 豪享來
+      description: Menu name, 菜名
+    shop:
+      type: integer
+      description: Shop ID
+    like:
+      type: integer
+      format: int32
+      example: 10
+      description: like count, 按讚數
+    dislike:
+      type: integer
+      format: int32
+      example: 1
+      description: dislike count, 按不喜歡數
+
+Menus:
+  type: object
+  required:
+    - menus
+  properties:
+    menus:
+      type: array
+      items:
+        description: |
+          Menus array  
+          菜單陣列
+        $ref: "#Menu"
+    shops:
+      type: array
+      items:
+        description: |
+          Menus array  
+          店家陣列
+        $ref: "/schemas/shops.yaml#Shop"
+

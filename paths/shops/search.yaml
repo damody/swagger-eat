@@ -1,0 +1,91 @@
+post:
+  summary: List all shops
+  operationId: listShops
+  tags:
+    - shops
+  parameters:
+    - name: Name
+      in: query
+      required: true
+      example: 牛
+      description: |
+        keyword of shop name  
+        店名搜尋關鍵字
+      schema:
+        type: string
+    - name: Lat
+      in: query
+      description: | 
+        Search point's Latitude  
+        搜尋中心的經度
+      required: true
+      example: 25
+      schema:
+        type: number
+        format: float
+    - name: Lng
+      in: query
+      description: |
+        Search point's Longitude  
+        搜尋中心的緯度
+      required: true
+      example: 121.5
+      schema:
+        type: number
+        format: float
+    - name: Range
+      in: query
+      description: |
+        Search data of range (meter)  
+        搜尋範圍(公尺)
+      required: true
+      example: 5000
+      schema:
+        type: number
+        format: float
+    - name: Like
+      in: query
+      required: false
+      example: 10
+      description: |
+        at least like count, only for VIP  
+        讚數要大於等於的數量，VIP專用
+      schema:
+        type: integer
+        format: int32
+    - name: Dislike
+      in: query
+      required: false
+      example: 3
+      description: |
+        at least like count, only for VIP  
+        不喜歡數要小於的數量，VIP專用
+      schema:
+        type: integer
+        format: int32
+    - name: Stars
+      in: query
+      required: false
+      example: 3
+      description: |
+        at least like count, only for VIP  
+        星級要大於等於的數量，VIP專用
+      schema:
+        type: integer
+        format: int32
+  responses:
+    '200':
+      description: |
+        All stores in the search range  
+        搜尋範圍內所有店家
+      headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/shops.yaml#Shops"
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"
