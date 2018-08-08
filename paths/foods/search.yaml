@@ -1,14 +1,7 @@
 post:
-  summary: List all menus
-  operationId: listMenus
-  consumes:
-    - application/json
-    - application/xml
-  produces:
-    - application/json
-    - application/xml
+  summary: List all foods
   tags:
-    - menus
+    - foods
   requestBody:
     required: true
     content:
@@ -16,49 +9,61 @@ post:
         schema:
           # Body schema with atomic property examples
           type: object
+          required:
+            - show_restaurant
+            - name
+            - lat
+            - lng
+            - range
           properties:
-            Name:
-              type: string
-              example: '牛'
+            show_restaurant:
+              type: boolean
+              example: true
               description: |
-                keyword of shop name  
+                Display Restaurant Informaion  
+                顯示菜單所在的店面
+            name:
+              type: string
+              example: '麻婆豆腐'
+              description: |
+                keyword of restaurant name  
                 菜名搜尋關鍵字
-            Lat:
+            lat:
               type: number
               format: float
               example: 25
               description: | 
                 Search point's Latitude  
                 搜尋中心的經度
-            Lng:
+            lng:
               type: number
               format: float
               example: 121.5
               description: | 
                 Search point's Longitude  
                 搜尋中心的緯度
-            Range:
+            range:
               type: number
               format: float
               example: 5000
               description: | 
                 Search data of range (meter)  
                 搜尋範圍(公尺)
-            Like:
+            like:
               type: integer
               format: int32
               example: 10
               description: | 
                 at least like count, only for VIP  
                 讚數要大於等於的數量，VIP專用
-            Dislike:
+            dislike:
               type: integer
               format: int32
               example: 3
               description: | 
                 at least like count, only for VIP  
                 不喜歡數要小於的數量，VIP專用
-            Stars:
+            stars:
               type: integer
               format: int32
               example: 3
@@ -69,12 +74,12 @@ post:
     '200':
       description: |
         All stores in the search range  
-        搜尋範圍內所有店家
+        搜尋範圍內所有餐廳
       headers:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/menus.yaml#Menus"
+            $ref: "/schemas/foods.yaml#Foods"
     '500':
       description: unexpected error
       content:

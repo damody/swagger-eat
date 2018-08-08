@@ -13,7 +13,11 @@ info:
 servers:
   - url: https://find-eat-price.com/v1
 paths:
-  /shops/search:
-    $ref: /paths/shops/search.yaml
-  /menus/search:
-    $ref: /paths/menus/search.yaml
+  /restaurants/search:
+    $ref: /paths/restaurants/search.yaml
+  /restaurants/show/{restaurantId}:
+    $ref: /paths/restaurants/show.yaml
+  /foods/search:
+    $ref: /paths/foods/search.yaml
+  /foods/show/{restaurantId}:
+    $ref: /paths/foods/show.yaml

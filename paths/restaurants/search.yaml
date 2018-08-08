@@ -1,0 +1,82 @@
+post:
+  summary: List all restaurants
+  tags:
+    - restaurants
+  parameters:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: object
+          required:
+            - name
+            - lat
+            - lng
+            - range
+          properties:
+            name:
+              type: string
+              example: '豪'
+              description: |
+                keyword of restaurant name  
+                店名搜尋關鍵字
+            lat:
+              type: number
+              format: float
+              example: 25
+              description: | 
+                Search point's Latitude  
+                搜尋中心的經度
+            lng:
+              type: number
+              format: float
+              example: 121.5
+              description: | 
+                Search point's Longitude  
+                搜尋中心的緯度
+            range:
+              type: number
+              format: float
+              example: 5000
+              description: | 
+                Search data of range (meter)  
+                搜尋範圍(公尺)
+            like:
+              type: integer
+              format: int32
+              example: 10
+              description: | 
+                at least like count, only for VIP  
+                讚數要大於等於的數量，VIP專用
+            dislike:
+              type: integer
+              format: int32
+              example: 3
+              description: | 
+                at least like count, only for VIP  
+                不喜歡數要小於的數量，VIP專用
+            stars:
+              type: integer
+              format: int32
+              example: 3
+              description: | 
+                at least like count, only for VIP  
+                星級要大於等於的數量，VIP專用
+  responses:
+    '200':
+      description: |
+        All stores in the search range  
+        搜尋範圍內所有餐廳
+      headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/restaurants.yaml#Restaurants"
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

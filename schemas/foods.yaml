@@ -1,0 +1,90 @@
+Food:
+  description: The Food common data.
+  required:
+    - id
+    - name
+    - restaurant
+    - like
+    - dislike
+  properties:
+    id:
+      type: integer
+      example: 7
+      format: int32
+      description: Food ID
+    name:
+      type: string
+      example: 麻婆豆腐
+      description: Food name, 菜名
+    restaurant:
+      type: integer
+      description: Restaurant ID
+      example: 3
+    like:
+      type: integer
+      format: int32
+      example: 10
+      description: like count, 按讚數
+    dislike:
+      type: integer
+      format: int32
+      example: 1
+      description: dislike count, 按不喜歡數
+
+Foods:
+  type: object
+  required:
+    - foods
+  properties:
+    foods:
+      type: array
+      items:
+        description: |
+          Foods array  
+          菜單陣列
+        $ref: "#Food"
+    restaurants:
+      type: array
+      items:
+        description: |
+          Foods array  
+          餐廳陣列
+        $ref: "/schemas/restaurants.yaml#Restaurant"
+
+FoodAll:
+  description: The Food common data.
+  required: 
+    - id
+    - name
+    - restaurant
+    - like
+    - dislike
+  properties:
+    id:
+      type: integer
+      example: 7
+      format: int32
+      description: Food ID
+    name:
+      type: string
+      example: 麻婆豆腐
+      description: Food name, 菜名
+    restaurant:
+      type: integer
+      description: Restaurant ID
+    like:
+      type: integer
+      format: int32
+      example: 10
+      description: like count, 按讚數
+    dislike:
+      type: integer
+      format: int32
+      example: 1
+      description: dislike count, 按不喜歡數
+    pic_url:
+      type: array
+      description: Picture url, 食物圖片網址
+      items:
+        type: string
+        example: https://i.imgur.com/wf9zZAA.jpg
