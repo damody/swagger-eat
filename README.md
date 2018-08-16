@@ -1,17 +1,12 @@
-<p align="center">
-    <b>Special thanks to the generous sponsorship by:</b>
-    <br><br>
-    <a href="https://www.hourmasters.com">
-      <img src="https://trello-attachments.s3.amazonaws.com/58a52a5cba3fdf7e02fe0b46/5a5ca9636a152015ebcddf8c/fd59154d52b5593b6082d96466694f73/slogan-01.png" width=350>
-    </a>
-</p>
+# 從這裡改的
+https://laravel-china.org/articles/10902/how-to-write-an-immediate-deliverable-component-based-swagger-file
 
 # Swagger 文件模板
 
 ## 專案概述
-專案名稱：Swagger 文件模板
+專案名稱：美食價 Swagger 文件模板
 
-專案代號：doc-template
+專案代號：swagger-eat
 
 這是一個用來快速建構 Swagger 文件的模板，整合 Swagger UI 及 NPM 套件，可於編輯時即時預覽文件，並於編寫完畢立即交付。
 另外也需注意，文件撰寫需組建化，將 `paths` 及 `schemas` 依業務邏輯分離，再以 `$ref` 的方式引入，詳見範例
