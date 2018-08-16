@@ -1,0 +1,29 @@
+get:
+  summary: get one food information
+  tags:
+    - foods
+  parameters:
+    - name: foodId
+      in: path
+      required: true
+      description: The id of the food to get information
+      schema:
+        type: integer
+        format: int32
+      example: 3
+  responses:
+    '200':
+      description: |
+        All foods in the search range  
+        搜尋範圍內所有餐廳
+      headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/foods.yaml#FoodAll"
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

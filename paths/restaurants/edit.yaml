@@ -1,0 +1,205 @@
+post:
+  summary: create new restaurant
+  tags:
+    - restaurants
+  parameters:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: object
+          required:
+            - name
+            - lat
+            - lng
+          properties:
+            author_id:
+              type: integer
+              format: int32
+              example: 42
+              description: |
+                author's user id  
+                新增這條目的人的id
+            name:
+              type: string
+              example: '李媽媽'
+              description: |
+                restaurant name  
+                店名
+            lat:
+              type: number
+              format: float
+              example: 25
+              description: | 
+                Search point's Latitude  
+                店家的經度
+            lng:
+              type: number
+              format: float
+              example: 121.5
+              description: | 
+                Search point's Longitude  
+                店家的緯度
+            chain_id:
+              type: integer
+              format: int32
+              example: 2
+              description: | 
+                The id of chain restaurants  
+                連鎖店ID
+            email:
+              type: string
+              example: 'linmother@gmail.com'
+              description: |
+                email  
+                電子信箱
+            phone:
+              type: string
+              example: '02-23616758'
+              description: |
+                phone number  
+                電話號碼
+            pic_url:
+              type: array
+              description: | 
+                picture url array  
+                圖片陣列
+              items:
+                type: string
+              example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+  responses:
+    '200':
+      description: |
+        OK
+      headers:
+      content:
+        application/json:    
+          schema:
+            properties:
+              id:
+                type: integer
+                example: 777
+                format: int32
+                description: restaurant ID
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"
+
+put:
+  summary: edit restaurants
+  tags:
+    - restaurants
+  parameters:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: object
+          required:
+            - id
+          properties:
+            id:
+              type: integer
+              format: int32
+              example: 2
+              description: | 
+                The id of chain restaurants  
+                連鎖店ID
+            alive:
+              type: boolean
+              example: true
+            name:
+              type: string
+              example: '李媽媽'
+              description: |
+                restaurant name  
+                店名
+            lat:
+              type: number
+              format: float
+              example: 25
+              description: | 
+                Search point's Latitude  
+                店家的經度
+            lng:
+              type: number
+              format: float
+              example: 121.5
+              description: | 
+                Search point's Longitude  
+                店家的緯度
+            chain_id:
+              type: integer
+              format: int32
+              example: 2
+              description: | 
+                The id of chain restaurants  
+                連鎖店ID
+            email:
+              type: string
+              example: 'linmother@gmail.com'
+              description: |
+                email  
+                電子信箱
+            phone:
+              type: string
+              example: '02-23616758'
+              description: |
+                phone number  
+                電話號碼
+            pic_url:
+              type: array
+              description: | 
+                picture url array  
+                圖片陣列
+              items:
+                type: string
+              example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+  responses:
+    '200':
+      description: OK
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"
+
+delete:
+  summary: delete restaurant
+  tags:
+    - restaurants
+  parameters:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: object
+          required: 
+            - id
+          properties:
+            id:
+              type: integer
+              format: int32
+              example: 2
+              description: | 
+                The id of chain restaurants  
+                餐廳ID
+  responses:
+    '200':
+      description: OK
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

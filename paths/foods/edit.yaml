@@ -1,0 +1,155 @@
+post:
+  summary: add new food for a restaurant
+  tags:
+    - foods
+  parameters:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: object
+          required:
+            - author_id
+            - restaurant_id
+            - name
+            - price
+          properties:
+            author_id:
+              type: integer
+              format: int32
+              example: 42
+              description: |
+                author's user id  
+                新增這條目的人的id
+            restaurant_id:
+              type: integer
+              format: int32
+              example: 12
+              description: |
+                restaurant id  
+                店ID
+            name:
+              type: string
+              example: '麻婆豆腐'
+              description: |
+                food name  
+                菜名
+            price:
+              type: number
+              format: float
+              example: 70
+            pic_url:
+              type: array
+              description: | 
+                picture url array  
+                圖片陣列
+              items:
+                type: string
+              example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+  responses:
+    '200':
+      description: |
+        OK
+      headers:
+      content:
+        application/json:    
+          schema:
+            properties:
+              id:
+                type: integer
+                example: 123
+                format: int32
+                description: food ID
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"
+
+put:
+  summary: edit restaurants
+  tags:
+    - foods
+  parameters:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: object
+          required:
+            - id
+          properties:
+            id:
+              type: integer
+              format: int32
+              example: 2
+              description: | 
+                The id of food
+                食物ID
+            alive:
+              type: boolean
+              example: true
+            name:
+              type: string
+              example: '麻婆豆腐'
+              description: |
+                food name  
+                菜名
+            price:
+              type: number
+              format: float
+              example: 70
+            pic_url:
+              type: array
+              description: | 
+                picture url array  
+                圖片陣列
+              items:
+                type: string
+              example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+  responses:
+    '200':
+      description: OK
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"
+
+delete:
+  summary: delete food
+  tags:
+    - foods
+  parameters:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: object
+          required:
+            - id
+          properties:
+            id:
+              type: integer
+              format: int32
+              example: 2
+              description: | 
+                The id of food  
+                食物ID
+  responses:
+    '200':
+      description: OK
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

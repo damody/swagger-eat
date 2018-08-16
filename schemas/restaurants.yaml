@@ -43,12 +43,29 @@ Restaurant:
       type: integer
       format: int32
       example: 4
-      description: auto compute value (1~5), 電腦自動算出的星級 1~5 星
+      description: |
+        auto compute value (1~5)  
+        電腦自動算出的星級 1~5 星
     distance:
       type: integer
       format: int32
-      example: 4
-      description: distance between search point to restaurant
+      example: 1544
+      description: |
+        distance between search point to restaurant  
+        距離搜尋中心有多遠
+    chain_id:
+      type: integer
+      format: int32
+      example: 5
+      description: |
+        restaurant chains id  
+        連鎖店ID
+    chain_name:
+      type: string
+      example: 豪大集團
+      description: |
+        restaurant chains name  
+        連鎖店名稱
 Restaurants:
   type: array
   items:
@@ -103,6 +120,13 @@ RestaurantAll:
       format: int32
       example: 4
       description: auto compute value (1~5), 電腦自動算出的星級 1~5 星
+    chain_id:
+      type: integer
+      format: int32
+      example: 6
+      description: |
+        restaurant chains id restaurants  
+        連鎖店ID
     pic_url:
       type: array
       description: Picture url, 餐廳圖片網址

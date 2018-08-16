@@ -1,12 +1,12 @@
-post:
-  summary: show one food information
+get:
+  summary: get one food comments
   tags:
     - foods
   parameters:
     - name: foodId
       in: path
       required: true
-      description: The id of the food to get information
+      description: The id of the food to get comments
       schema:
         type: integer
         format: int32
@@ -14,13 +14,13 @@ post:
   responses:
     '200':
       description: |
-        All foods in the search range  
-        搜尋範圍內所有餐廳
+        Get all comments for this food  
+        得到該食物所有評論
       headers:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/foods.yaml#FoodAll"
+            $ref: "/schemas/comments.yaml#CommentIDs"
     '500':
       description: unexpected error
       content:

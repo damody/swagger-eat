@@ -1,0 +1,29 @@
+get:
+  summary: get one member information
+  tags:
+    - members
+  parameters:
+    - name: memberId
+      in: path
+      required: true
+      description: The id of the member to get information
+      schema:
+        type: integer
+        format: int32
+      example: 3
+  responses:
+    '200':
+      description: |
+        Get information for member  
+        得到會員所有資訊
+      headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/members.yaml#MemberAll"
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

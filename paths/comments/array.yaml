@@ -1,0 +1,31 @@
+get:
+  summary: get one comment information
+  tags:
+    - comments
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          # Body schema with atomic property examples
+          type: array
+          items:
+            type: integer
+            format: int32
+          example: [1, 5, 8, 9]
+  responses:
+    '200':
+      description: |
+        get comment information  
+        得到評論資訊
+      headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/comments.yaml#CommentAlls"
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

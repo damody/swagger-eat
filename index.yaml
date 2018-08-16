@@ -1,6 +1,6 @@
 openapi: "3.0.0"
 info:
-  version: 1.0.0
+  version: 0.1
   title: Find eat price
   description: side project
   contact:
@@ -13,11 +13,40 @@ info:
 servers:
   - url: https://find-eat-price.com/v1
 paths:
+  /restaurants:
+    $ref: /paths/restaurants/edit.yaml
   /restaurants/search:
     $ref: /paths/restaurants/search.yaml
-  /restaurants/show/{restaurantId}:
-    $ref: /paths/restaurants/show.yaml
+  /restaurants/{restaurantId}:
+    $ref: /paths/restaurants/get.yaml
+  /restaurants/like:
+    $ref: /paths/restaurants/like.yaml
+
+  /foods:
+    $ref: /paths/foods/edit.yaml
   /foods/search:
     $ref: /paths/foods/search.yaml
-  /foods/show/{restaurantId}:
-    $ref: /paths/foods/show.yaml
+  /foods/{foodId}:
+    $ref: /paths/foods/get.yaml
+  /foods/{foodId}/comments:
+    $ref: /paths/foods/comments.yaml
+  /foods/like:
+    $ref: /paths/foods/like.yaml
+  
+  /members:
+    $ref: /paths/members/edit.yaml
+  /members/{membersId}:
+    $ref: /paths/members/get.yaml
+  /members/{membersId}/comments:
+    $ref: /paths/members/comments.yaml
+  /members/like:
+    $ref: /paths/members/like.yaml
+
+  /comments:
+    $ref: /paths/comments/edit.yaml
+  /comments/{commentsId}:
+    $ref: /paths/comments/get.yaml
+  /comments/like:
+    $ref: /paths/comments/like.yaml
+  /comments/array:
+    $ref: /paths/comments/array.yaml

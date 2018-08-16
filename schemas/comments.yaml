@@ -1,0 +1,122 @@
+Comment:
+  description: The Comment common data.
+  required:
+    - author_id
+    - author_name
+    - text
+    - picture
+    - restaurant_id
+    - food_id
+  properties:
+    author_id:
+      type: integer
+      format: int32
+      example: 7
+      description: author ID 作者ID
+    author_name:
+      type: string
+      example: niko niko ni
+      description: author name, 作者名字
+    text:
+      type: string
+      example: 好吃好香好嫩！
+      description: experience, 感想或心得
+    food_id:
+      type: integer
+      format: int32
+      example: 9
+      description: |
+        food ID, 食物ID  
+        -1 stand for no food just for restaurant  
+        如果值是-1 表示這評論是針對餐廳的
+    restaurant_id:
+      type: integer
+      format: int32
+      example: 7
+      description: restaurant ID, 餐廳ID
+    pic_url:
+      type: array
+      description: | 
+        about the experience picture  
+        有關評論的圖片
+      items:
+        type: string
+      example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+      
+Comments:
+  type: object
+  required:
+    - comments
+  properties:
+    comments:
+      type: array
+      items:
+        description: |
+          Comments array  
+          會員陣列
+        $ref: "#Comment"
+
+CommentAll:
+  description: The Comment common data.
+  required: 
+    - id
+    - author_id
+    - author_name
+    - text
+    - like
+    - dislike
+  properties:
+    id:
+      type: integer
+      example: 77
+      format: int32
+      description: Comment ID
+    author_id:
+      type: integer
+      format: int32
+      example: 7
+      description: author ID 作者ID
+    author_name:
+      type: string
+      example: niko niko ni
+      description: author name, 作者名字
+    text:
+      type: string
+      example: 好吃好香好嫩！
+      description: experience, 感想或心得
+    like:
+      type: integer
+      format: int32
+      example: 10
+      description: like count, 按讚數
+    dislike:
+      type: integer
+      format: int32
+      example: 1
+      description: dislike count, 按不喜歡數
+    pic_url:
+      type: array
+      description: | 
+        about the experience picture  
+        有關評論的圖片
+      items:
+        type: string
+      example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+
+CommentAlls:
+  type: array
+  items:
+    description: |
+      Comments array  
+      會員陣列
+    $ref: "#CommentAll"
+
+CommentIDs:
+  type: array
+  items:
+    description: |
+      Comments array  
+      會員陣列
+    type: integer
+    format: int32
+  example: [1, 5, 8, 9]

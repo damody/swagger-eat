@@ -1,0 +1,41 @@
+post:
+  summary: get one food information
+  tags:
+    - foods
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - id
+            - like
+          properties:
+            id:
+              type: integer
+              format: int32
+              example: 6
+              description: food ID
+            like:
+              type: integer
+              format: int32
+              example: 0
+              description: |
+                0 is none  
+                1 is like  
+                2 is dislike  
+                0 無狀態  
+                1 喜歡  
+                2 不喜歡
+  responses:
+    '200':
+      description: |
+        Success
+      headers:
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

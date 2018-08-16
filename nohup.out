@@ -1,0 +1,106 @@
+
+> @ doc /home/damody/Documents/swagger-doc-template
+> live-server .
+
+[31mError: listen EACCES 0.0.0.0:82[39m
+
+> @ doc /home/damody/Documents/swagger-doc-template
+> live-server .
+
+[32mServing "." at http://127.0.0.1:82[39m
+[36mReady for changes[39m
+[36mChange detected[39m nohup.out
+(node:20090) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.cp.once.code (/home/damody/Documents/swagger-doc-template/node_modules/opn/index.js:84:13)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Socket.stream.socket.on (internal/child_process.js:346:11)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at Pipe._handle.close [as _onclose] (net.js:557:12)
+(node:20090) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:20090) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[36mChange detected[39m nohup.out
+
+> @ doc /home/damody/Documents/swagger-doc-template
+> live-server .
+
+[32mServing "." at http://127.0.0.1:82[39m
+[36mReady for changes[39m
+[36mChange detected[39m nohup.out
+(node:20264) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.cp.once.code (/home/damody/Documents/swagger-doc-template/node_modules/opn/index.js:84:13)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Socket.stream.socket.on (internal/child_process.js:346:11)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at Pipe._handle.close [as _onclose] (net.js:557:12)
+(node:20264) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:20264) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[0mGET /favicon.ico [33m404 [0m3.738 ms - 24[0m
+[36mChange detected[39m nohup.out
+[36mChange detected[39m index.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m schemas/restaurants.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m schemas/restaurants.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m schemas/restaurants.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m schemas/restaurants.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m schemas/restaurants.yaml
+[36mChange detected[39m nohup.out
+[0mGET /robots.txt [33m404 [0m1.588 ms - 23[0m
+[36mChange detected[39m nohup.out
+[0mGET /hello/ui.htm [33m404 [0m1.010 ms - 25[0m
+[36mChange detected[39m nohup.out
+[0mGET /favicon.ico [33m404 [0m0.632 ms - 24[0m
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[0mGET /hello/ [33m404 [0m0.282 ms - 19[0m
+[36mChange detected[39m nohup.out
+[0mGET /favicon.ico [33m404 [0m0.718 ms - 24[0m
+[36mChange detected[39m nohup.out
+[0mGET /ws [33m404 [0m0.658 ms - 15[0m
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m index.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m schemas/restaurants.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[36mChange detected[39m paths/restaurants/new.yaml
+[36mChange detected[39m nohup.out
+[0mGET /favicon.ico [33m404 [0m0.348 ms - 24[0m
+[36mChange detected[39m nohup.out
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m1.044 ms - 48[0m
+[36mChange detected[39m nohup.out
+[0mGET /robots.txt [33m404 [0m0.475 ms - 23[0m
+[36mChange detected[39m nohup.out
+[0mGET /hello/ [33m404 [0m0.399 ms - 19[0m
+[36mChange detected[39m nohup.out
+[0mGET /favicon.ico [33m404 [0m0.808 ms - 24[0m
+[36mChange detected[39m nohup.out

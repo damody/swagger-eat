@@ -1,0 +1,29 @@
+get:
+  summary: get one comment information
+  tags:
+    - comments
+  parameters:
+    - name: commentId
+      in: path
+      required: true
+      description: The id of the comment to get information
+      schema:
+        type: integer
+        format: int32
+      example: 3
+  responses:
+    '200':
+      description: |
+        All comments in the search range  
+        搜尋範圍內所有餐廳
+      headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/comments.yaml#CommentAll"
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"

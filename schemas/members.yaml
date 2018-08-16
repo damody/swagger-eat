@@ -1,0 +1,87 @@
+Member:
+  description: The Member common data.
+  required:
+    - id
+    - name
+    - email
+    - gender
+  properties:
+    id:
+      type: integer
+      format: int32
+      example: 7
+      description: Member ID
+    name:
+      type: string
+      example: 'niko niko ni'
+      description: Member name, 會員名
+    email:
+      type: string
+      example: nikoniko@gmail.com
+      description: email
+    phonenumber:
+      type: string
+      example: 0987487087
+      description: phone number, 手機號碼
+    gender:
+      type: integer
+      format: int32
+      example: 1
+      description: 0 unkown, 1 maie, 2 female
+    picture:
+      type: string
+      example: https://i.imgur.com/4AO0Foa.jpg
+      description: | 
+        photo sticker (support jpg, png, mp4)  
+        個人頭像的圖片網址(支援 jpg, png, mp4)
+
+Members:
+  type: object
+  required:
+    - members
+  properties:
+    members:
+      type: array
+      items:
+        description: |
+          Members array  
+          會員陣列
+        $ref: "#Member"
+
+MemberAll:
+  description: The Member common data.
+  required: 
+    - id
+    - name
+    - email
+    - gender
+  properties:
+    id:
+      type: integer
+      example: 77
+      format: int32
+      description: Member ID
+    name:
+      type: string
+      example: 'niko niko ni'
+      description: Member name, 會員名
+    email:
+      type: string
+      example: nikoniko@gmail.com
+      description: email
+    phonenumber:
+      type: string
+      example: 0987487087
+      description: phone number, 手機號碼
+    gender:
+      type: integer
+      format: int32
+      example: 1
+      description: 0 unkown, 1 maie, 2 female
+    picture:
+      type: string
+      example: https://i.imgur.com/4AO0Foa.jpg
+      description: | 
+        photo sticker (support jpg, png, mp4)  
+        個人頭像的圖片網址(支援 jpg, png, mp4)
+

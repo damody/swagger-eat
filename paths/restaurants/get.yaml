@@ -1,10 +1,10 @@
-post:
+get:
   summary: show one restaurant information
   tags:
     - restaurants
   parameters:
     - name: restaurantId
-      in: path
+      in: query
       required: true
       description: The id of the restaurant to get information
       schema:
@@ -13,14 +13,12 @@ post:
       example: 3
   responses:
     '200':
-      description: |
-        All stores in the search range  
-        搜尋範圍內所有餐廳
+      description: OK
       headers:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/restaurants.yaml#RestaurantAll"
+            $ref: "/schemas/foods.yaml#FoodAll"
     '500':
       description: unexpected error
       content:

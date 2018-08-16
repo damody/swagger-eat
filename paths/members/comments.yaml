@@ -1,0 +1,29 @@
+get:
+  summary: get one member comments
+  tags:
+    - members
+  parameters:
+    - name: memberId
+      in: path
+      required: true
+      description: The id of the member to get comments
+      schema:
+        type: integer
+        format: int32
+      example: 3
+  responses:
+    '200':
+      description: |
+        Get member's comments   
+        得到該會員所有評論
+      headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/comments.yaml#CommentIDs"
+    '500':
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "/schemas/common.yaml#Error"
