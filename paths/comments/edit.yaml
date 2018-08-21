@@ -2,9 +2,9 @@ post:
   summary: add new comment for a restaurant
   tags:
     - comments
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -58,6 +58,7 @@ post:
                 description: comment ID
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
@@ -67,9 +68,9 @@ put:
   summary: edit restaurants
   tags:
     - comments
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -120,9 +121,9 @@ delete:
   summary: delete comment
   tags:
     - comments
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -143,6 +144,7 @@ delete:
       description: OK
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:

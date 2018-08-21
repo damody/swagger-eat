@@ -1,10 +1,11 @@
 post:
   summary: create new restaurant
+  operationId: postRestaurant
   tags:
     - restaurants
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -92,11 +93,12 @@ post:
 
 put:
   summary: edit restaurants
+  operationId: putRestaurant
   tags:
     - restaurants
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -174,11 +176,12 @@ put:
 
 delete:
   summary: delete restaurant
+  operationId: deleteRestaurant
   tags:
     - restaurants
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:

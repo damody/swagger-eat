@@ -11,7 +11,7 @@ info:
     name: MIT
     url: http://opensource.org/licenses/MIT
 servers:
-  - url: https://find-eat-price.com/v1
+  - url: http://127.0.0.1:8080/v1
 paths:
   /restaurants:
     $ref: /paths/restaurants/edit.yaml
@@ -39,9 +39,7 @@ paths:
     $ref: /paths/members/get.yaml
   /members/{membersId}/comments:
     $ref: /paths/members/comments.yaml
-  /members/like:
-    $ref: /paths/members/like.yaml
-
+  
   /comments:
     $ref: /paths/comments/edit.yaml
   /comments/{commentsId}:

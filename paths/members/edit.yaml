@@ -2,9 +2,9 @@ post:
   summary: add new member for a restaurant
   tags:
     - members
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -85,6 +85,7 @@ post:
                 example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
@@ -94,9 +95,9 @@ put:
   summary: edit restaurants
   tags:
     - members
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -138,6 +139,7 @@ put:
       description: OK
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
@@ -147,9 +149,9 @@ delete:
   summary: delete member
   tags:
     - members
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -170,6 +172,7 @@ delete:
       description: OK
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:

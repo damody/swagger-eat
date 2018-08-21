@@ -14,7 +14,7 @@ get:
   responses:
     '200':
       description: |
-        Get member's comments   
+        Get member's comments  
         得到該會員所有評論
       headers:
       content:

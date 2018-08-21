@@ -1,10 +1,11 @@
 post:
   summary: add new food for a restaurant
+  operationId: newFood
   tags:
     - foods
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -64,6 +65,7 @@ post:
                 description: food ID
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
@@ -73,9 +75,9 @@ put:
   summary: edit restaurants
   tags:
     - foods
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -117,6 +119,7 @@ put:
       description: OK
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
@@ -126,9 +129,9 @@ delete:
   summary: delete food
   tags:
     - foods
-  parameters:
   requestBody:
     required: true
+    headers:
     content:
       application/json:
         schema:
@@ -149,6 +152,7 @@ delete:
       description: OK
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
