@@ -25,7 +25,11 @@ post:
               type: string
               example: nikoniko@gmail.com
               description: email
-            phonenumber:
+            password:
+              type: string
+              example: iD8DBQBYe7UDeD/Njli8r7oRAgRsAJ4mHDka1VqgCYija3bLjGMyD+tohACg+y+d
+              description: password hash
+            phone_number:
               type: string
               example: 0987487087
               description: phone number, 手機號碼
@@ -66,7 +70,7 @@ post:
                 type: string
                 example: nikoniko@gmail.com
                 description: email
-              phonenumber:
+              phone_number:
                 type: string
                 example: 0987487087
                 description: phone number, 手機號碼
@@ -113,9 +117,12 @@ put:
               description: | 
                 The id of member
                 會員ID
-            alive:
+            enable:
               type: boolean
               example: true
+              description: | 
+                bool for check vaild member
+                會員是否有效
             name:
               type: string
               example: '麻婆豆腐'
