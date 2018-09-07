@@ -7,11 +7,16 @@ Food:
     - like
     - dislike
   properties:
-    id:
+    food_id:
       type: integer
       example: 7
       format: int32
       description: Food ID
+    menu_id:
+      type: integer
+      example: 7
+      format: int32
+      description: Menu ID
     name:
       type: string
       example: 麻婆豆腐
@@ -34,22 +39,35 @@ Food:
 Foods:
   type: object
   required:
-    - foods
+    - food
   properties:
-    foods:
+    food:
       type: array
       items:
         description: |
-          Foods array  
+          Food array  
           菜單陣列
         $ref: "#Food"
-    restaurants:
+
+RestaurantFood:
+  type: object
+  required:
+    - food
+  properties:
+    food:
       type: array
       items:
         description: |
-          Foods array  
+          Food array  
+          菜單陣列
+        $ref: "#Food"
+    restaurant:
+      type: array
+      items:
+        description: |
+          Food array  
           餐廳陣列
-        $ref: "/schemas/restaurants.yaml#Restaurant"
+        $ref: "/schemas/restaurant.yaml#Restaurant"
 
 FoodAll:
   description: The Food common data.

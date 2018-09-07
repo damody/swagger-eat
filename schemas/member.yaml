@@ -19,7 +19,7 @@ Member:
       type: string
       example: nikoniko@gmail.com
       description: email
-    phonenumber:
+    phone:
       type: string
       example: 0987487087
       description: phone number, 手機號碼
@@ -38,9 +38,9 @@ Member:
 Members:
   type: object
   required:
-    - members
+    - member
   properties:
-    members:
+    member:
       type: array
       items:
         description: |
@@ -69,7 +69,7 @@ MemberAll:
       type: string
       example: nikoniko@gmail.com
       description: email
-    phonenumber:
+    phone:
       type: string
       example: 0987487087
       description: phone number, 手機號碼

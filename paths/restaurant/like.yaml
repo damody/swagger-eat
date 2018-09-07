@@ -1,7 +1,7 @@
 post:
-  summary: get one food information
+  summary: get one restaurant information
   tags:
-    - foods
+    - restaurant
   requestBody:
     required: true
     content:
@@ -16,7 +16,7 @@ post:
               type: integer
               format: int32
               example: 6
-              description: food ID
+              description: restaurant ID
             like:
               type: integer
               format: int32

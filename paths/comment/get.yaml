@@ -1,12 +1,12 @@
 get:
-  summary: get one member information
+  summary: get one comment information
   tags:
-    - members
+    - comment
   parameters:
-    - name: memberId
+    - name: commentId
       in: path
       required: true
-      description: The id of the member to get information
+      description: The id of the comment to get information
       schema:
         type: integer
         format: int32
@@ -14,13 +14,13 @@ get:
   responses:
     '200':
       description: |
-        Get information for member  
-        得到會員所有資訊
+        All comment in the search range  
+        搜尋範圍內所有餐廳
       headers:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/members.yaml#MemberAll"
+            $ref: "/schemas/comment.yaml#CommentAll"
     '500':
       description: unexpected error
       content:

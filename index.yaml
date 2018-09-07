@@ -13,38 +13,40 @@ info:
 servers:
   - url: http://127.0.0.1:8080/
 paths:
-  /restaurants:
-    $ref: /paths/restaurants/edit.yaml
-  /restaurants/search:
-    $ref: /paths/restaurants/search.yaml
-  /restaurants/{restaurantId}:
-    $ref: /paths/restaurants/get.yaml
-  /restaurants/like:
-    $ref: /paths/restaurants/like.yaml
+  /restaurant:
+    $ref: /paths/restaurant/edit.yaml
+  /restaurant/search:
+    $ref: /paths/restaurant/search.yaml
+  /restaurant/{restaurantId}:
+    $ref: /paths/restaurant/get.yaml
+  /restaurant/like:
+    $ref: /paths/restaurant/like.yaml
 
-  /foods:
-    $ref: /paths/foods/edit.yaml
-  /foods/search:
-    $ref: /paths/foods/search.yaml
-  /foods/{foodId}:
-    $ref: /paths/foods/get.yaml
-  /foods/{foodId}/comments:
-    $ref: /paths/foods/comments.yaml
-  /foods/like:
-    $ref: /paths/foods/like.yaml
+  /food:
+    $ref: /paths/food/edit.yaml
+  /food/search:
+    $ref: /paths/food/search.yaml
+  /food/menu:
+    $ref: /paths/food/menu.yaml
+  /food/{foodId}:
+    $ref: /paths/food/get.yaml
+  /food/{foodId}/comment:
+    $ref: /paths/food/comment.yaml
+  /food/like:
+    $ref: /paths/food/like.yaml
   
-  /members:
-    $ref: /paths/members/edit.yaml
-  /members/{membersId}:
-    $ref: /paths/members/get.yaml
-  /members/{membersId}/comments:
-    $ref: /paths/members/comments.yaml
+  /member:
+    $ref: /paths/member/edit.yaml
+  /member/{memberId}:
+    $ref: /paths/member/get.yaml
+  /member/{memberId}/comment:
+    $ref: /paths/member/comment.yaml
   
-  /comments:
-    $ref: /paths/comments/edit.yaml
-  /comments/{commentsId}:
-    $ref: /paths/comments/get.yaml
-  /comments/like:
-    $ref: /paths/comments/like.yaml
-  /comments/array:
-    $ref: /paths/comments/array.yaml
+  /comment:
+    $ref: /paths/comment/edit.yaml
+  /comment/{commentId}:
+    $ref: /paths/comment/get.yaml
+  /comment/like:
+    $ref: /paths/comment/like.yaml
+  /comment/array:
+    $ref: /paths/comment/array.yaml

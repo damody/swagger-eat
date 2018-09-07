@@ -1,7 +1,7 @@
 post:
-  summary: List all restaurants
+  summary: List all restaurant
   tags:
-    - restaurants
+    - restaurant
   parameters:
   requestBody:
     required: true
@@ -73,7 +73,7 @@ post:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/restaurants.yaml#Restaurants"
+            $ref: "/schemas/restaurant.yaml#Restaurant"
     '500':
       description: unexpected error
       content:

@@ -1,26 +1,24 @@
 get:
-  summary: get one food comments
+  summary: show one restaurant information
   tags:
-    - foods
+    - restaurant
   parameters:
-    - name: foodId
-      in: path
+    - name: restaurantId
+      in: query
       required: true
-      description: The id of the food to get comments
+      description: The id of the restaurant to get information
       schema:
         type: integer
         format: int32
       example: 3
   responses:
     '200':
-      description: |
-        Get all comments for this food  
-        得到該食物所有評論
+      description: OK
       headers:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/comments.yaml#CommentIDs"
+            $ref: "/schemas/restaurant.yaml#RestaurantAll"
     '500':
       description: unexpected error
       content:

@@ -1,8 +1,7 @@
 post:
-  summary: create new restaurant
-  operationId: postRestaurant
+  summary: add new member for a restaurant
   tags:
-    - restaurants
+    - member
   requestBody:
     required: true
     headers:
@@ -13,55 +12,32 @@ post:
           type: object
           required:
             - name
-            - lat
-            - lng
+            - email
+            - gender
           properties:
-            author_id:
-              type: integer
-              format: int32
-              example: 42
-              description: |
-                author's user id  
-                新增這條目的人的id
             name:
               type: string
-              example: '李媽媽'
-              description: |
-                restaurant name  
-                店名
-            lat:
-              type: number
-              format: float
-              example: 25
-              description: | 
-                Search point's Latitude  
-                店家的經度
-            lng:
-              type: number
-              format: float
-              example: 121.5
-              description: | 
-                Search point's Longitude  
-                店家的緯度
-            chain_id:
-              type: integer
-              format: int32
-              example: 2
-              description: | 
-                The id of chain restaurants  
-                連鎖店ID
+              example: '麻婆豆腐'
+            description: |
+              member name  
+              會員名
             email:
               type: string
-              example: 'linmother@gmail.com'
-              description: |
-                email  
-                電子信箱
+              example: nikoniko@gmail.com
+              description: email
+            password:
+              type: string
+              example: iD8DBQBYe7UDeD/Njli8r7oRAgRsAJ4mHDka1VqgCYija3bLjGMyD+tohACg+y+d
+              description: password hash
             phone:
               type: string
-              example: '02-23616758'
-              description: |
-                phone number  
-                電話號碼
+              example: 0987487087
+              description: phone number, 手機號碼
+            gender:
+              type: integer
+              format: int32
+              example: 1
+              description: 0 unkown, 1 maie, 2 female
             pic_url:
               type: array
               description: | 
@@ -81,21 +57,48 @@ post:
             properties:
               id:
                 type: integer
-                example: 777
+                example: 123
                 format: int32
-                description: restaurant ID
+                description: member ID
+              name:
+                type: string
+                example: 'geo man'
+              description: |
+                member name  
+                會員名
+              email:
+                type: string
+                example: nikoniko@gmail.com
+                description: email
+              phone:
+                type: string
+                example: 0987487087
+                description: phone number, 手機號碼
+              gender:
+                type: integer
+                format: int32
+                example: 1
+                description: 0 unkown, 1 maie, 2 female
+              pic_url:
+                type: array
+                description: | 
+                  picture url array  
+                  圖片陣列
+                items:
+                  type: string
+                example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
             $ref: "/schemas/common.yaml#Error"
 
 put:
-  summary: edit restaurants
-  operationId: putRestaurant
+  summary: edit restaurant
   tags:
-    - restaurants
+    - member
   requestBody:
     required: true
     headers:
@@ -112,50 +115,24 @@ put:
               format: int32
               example: 2
               description: | 
-                The id of chain restaurants  
-                連鎖店ID
-            alive:
+                The id of member
+                會員ID
+            enable:
               type: boolean
               example: true
+              description: | 
+                bool for check vaild member
+                會員是否有效
             name:
               type: string
-              example: '李媽媽'
+              example: '麻婆豆腐'
               description: |
-                restaurant name  
-                店名
-            lat:
+                member name  
+                會員名
+            price:
               type: number
               format: float
-              example: 25
-              description: | 
-                Search point's Latitude  
-                店家的經度
-            lng:
-              type: number
-              format: float
-              example: 121.5
-              description: | 
-                Search point's Longitude  
-                店家的緯度
-            chain_id:
-              type: integer
-              format: int32
-              example: 2
-              description: | 
-                The id of chain restaurants  
-                連鎖店ID
-            email:
-              type: string
-              example: 'linmother@gmail.com'
-              description: |
-                email  
-                電子信箱
-            phone:
-              type: string
-              example: '02-23616758'
-              description: |
-                phone number  
-                電話號碼
+              example: 70
             pic_url:
               type: array
               description: | 
@@ -169,16 +146,16 @@ put:
       description: OK
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:
             $ref: "/schemas/common.yaml#Error"
 
 delete:
-  summary: delete restaurant
-  operationId: deleteRestaurant
+  summary: delete member
   tags:
-    - restaurants
+    - member
   requestBody:
     required: true
     headers:
@@ -187,7 +164,7 @@ delete:
         schema:
           # Body schema with atomic property examples
           type: object
-          required: 
+          required:
             - id
           properties:
             id:
@@ -195,13 +172,14 @@ delete:
               format: int32
               example: 2
               description: | 
-                The id of chain restaurants  
-                餐廳ID
+                The id of member
+                會員ID
   responses:
     '200':
       description: OK
     '500':
       description: unexpected error
+      headers:
       content:
         application/json:
           schema:

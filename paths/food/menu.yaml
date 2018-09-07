@@ -1,7 +1,7 @@
 post:
-  summary: get one restaurant information
+  summary: get food information
   tags:
-    - restaurants
+    - food
   requestBody:
     required: true
     content:
@@ -9,30 +9,22 @@ post:
         schema:
           type: object
           required:
-            - id
-            - like
+            - menu_id
           properties:
-            id:
+            menu_id:
               type: integer
               format: int32
               example: 6
-              description: restaurant ID
-            like:
-              type: integer
-              format: int32
-              example: 0
-              description: |
-                0 is none  
-                1 is like  
-                2 is dislike  
-                0 無狀態  
-                1 喜歡  
-                2 不喜歡
+              description: Menu ID
   responses:
     '200':
       description: |
         Success
       headers:
+      content:
+        application/json:    
+          schema:
+            $ref: "/schemas/food.yaml#Foods"
     '500':
       description: unexpected error
       content:

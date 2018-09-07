@@ -1,7 +1,7 @@
 get:
   summary: get one comment information
   tags:
-    - comments
+    - comment
   requestBody:
     required: true
     content:
@@ -22,7 +22,7 @@ get:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/comments.yaml#CommentAlls"
+            $ref: "/schemas/comment.yaml#CommentAlls"
     '500':
       description: unexpected error
       content:

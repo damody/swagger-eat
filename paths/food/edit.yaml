@@ -1,7 +1,8 @@
 post:
-  summary: add new member for a restaurant
+  summary: add new food for a restaurant
+  operationId: newFood
   tags:
-    - members
+    - food
   requestBody:
     required: true
     headers:
@@ -11,33 +12,35 @@ post:
           # Body schema with atomic property examples
           type: object
           required:
+            - author_id
+            - restaurant_id
             - name
-            - email
-            - gender
+            - price
           properties:
+            author_id:
+              type: integer
+              format: int32
+              example: 42
+              description: |
+                author's user id  
+                新增這條目的人的id
+            restaurant_id:
+              type: integer
+              format: int32
+              example: 12
+              description: |
+                restaurant id  
+                店ID
             name:
               type: string
               example: '麻婆豆腐'
-            description: |
-              member name  
-              會員名
-            email:
-              type: string
-              example: nikoniko@gmail.com
-              description: email
-            password:
-              type: string
-              example: iD8DBQBYe7UDeD/Njli8r7oRAgRsAJ4mHDka1VqgCYija3bLjGMyD+tohACg+y+d
-              description: password hash
-            phone:
-              type: string
-              example: 0987487087
-              description: phone number, 手機號碼
-            gender:
-              type: integer
-              format: int32
-              example: 1
-              description: 0 unkown, 1 maie, 2 female
+              description: |
+                food name  
+                菜名
+            price:
+              type: number
+              format: float
+              example: 70
             pic_url:
               type: array
               description: | 
@@ -59,34 +62,7 @@ post:
                 type: integer
                 example: 123
                 format: int32
-                description: member ID
-              name:
-                type: string
-                example: 'geo man'
-              description: |
-                member name  
-                會員名
-              email:
-                type: string
-                example: nikoniko@gmail.com
-                description: email
-              phone:
-                type: string
-                example: 0987487087
-                description: phone number, 手機號碼
-              gender:
-                type: integer
-                format: int32
-                example: 1
-                description: 0 unkown, 1 maie, 2 female
-              pic_url:
-                type: array
-                description: | 
-                  picture url array  
-                  圖片陣列
-                items:
-                  type: string
-                example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+                description: food ID
     '500':
       description: unexpected error
       headers:
@@ -96,9 +72,9 @@ post:
             $ref: "/schemas/common.yaml#Error"
 
 put:
-  summary: edit restaurants
+  summary: edit restaurant
   tags:
-    - members
+    - food
   requestBody:
     required: true
     headers:
@@ -115,20 +91,17 @@ put:
               format: int32
               example: 2
               description: | 
-                The id of member
-                會員ID
-            enable:
+                The id of food
+                食物ID
+            alive:
               type: boolean
               example: true
-              description: | 
-                bool for check vaild member
-                會員是否有效
             name:
               type: string
               example: '麻婆豆腐'
               description: |
-                member name  
-                會員名
+                food name  
+                菜名
             price:
               type: number
               format: float
@@ -153,9 +126,9 @@ put:
             $ref: "/schemas/common.yaml#Error"
 
 delete:
-  summary: delete member
+  summary: delete food
   tags:
-    - members
+    - food
   requestBody:
     required: true
     headers:
@@ -172,8 +145,8 @@ delete:
               format: int32
               example: 2
               description: | 
-                The id of member
-                會員ID
+                The id of food  
+                食物ID
   responses:
     '200':
       description: OK

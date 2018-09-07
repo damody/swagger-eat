@@ -1,8 +1,7 @@
 post:
-  summary: add new food for a restaurant
-  operationId: newFood
+  summary: add new comment for a restaurant
   tags:
-    - foods
+    - comment
   requestBody:
     required: true
     headers:
@@ -20,35 +19,29 @@ post:
             author_id:
               type: integer
               format: int32
-              example: 42
+              example: 7
+              description: author ID 作者ID
+            author_name:
+              type: string
+              example: niko niko ni
+              description: author name, 作者名字
+            text:
+              type: string
+              example: 好吃好香好嫩！
+              description: 感想或心得
+            food_id:
+              type: integer
+              format: int32
+              example: 9
               description: |
-                author's user id  
-                新增這條目的人的id
+                food ID, 食物ID  
+                -1 stand for no food just for restaurant  
+                如果值是-1 表示這評論是針對餐廳的
             restaurant_id:
               type: integer
               format: int32
-              example: 12
-              description: |
-                restaurant id  
-                店ID
-            name:
-              type: string
-              example: '麻婆豆腐'
-              description: |
-                food name  
-                菜名
-            price:
-              type: number
-              format: float
-              example: 70
-            pic_url:
-              type: array
-              description: | 
-                picture url array  
-                圖片陣列
-              items:
-                type: string
-              example: [https://i.imgur.com/LipghlK.jpg, https://i.imgur.com/zGQasZX.jpg, https://i.imgur.com/MmBXHWE.jpg]
+              example: 7
+              description: restaurant ID, 餐廳ID
   responses:
     '200':
       description: |
@@ -62,7 +55,7 @@ post:
                 type: integer
                 example: 123
                 format: int32
-                description: food ID
+                description: comment ID
     '500':
       description: unexpected error
       headers:
@@ -72,9 +65,9 @@ post:
             $ref: "/schemas/common.yaml#Error"
 
 put:
-  summary: edit restaurants
+  summary: edit restaurant
   tags:
-    - foods
+    - comment
   requestBody:
     required: true
     headers:
@@ -91,8 +84,8 @@ put:
               format: int32
               example: 2
               description: | 
-                The id of food
-                食物ID
+                The id of comment
+                評論ID
             alive:
               type: boolean
               example: true
@@ -100,7 +93,7 @@ put:
               type: string
               example: '麻婆豆腐'
               description: |
-                food name  
+                comment name  
                 菜名
             price:
               type: number
@@ -119,16 +112,15 @@ put:
       description: OK
     '500':
       description: unexpected error
-      headers:
       content:
         application/json:
           schema:
             $ref: "/schemas/common.yaml#Error"
 
 delete:
-  summary: delete food
+  summary: delete comment
   tags:
-    - foods
+    - comment
   requestBody:
     required: true
     headers:
@@ -145,8 +137,8 @@ delete:
               format: int32
               example: 2
               description: | 
-                The id of food  
-                食物ID
+                The id of comment
+                評論ID
   responses:
     '200':
       description: OK

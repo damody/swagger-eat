@@ -1,7 +1,7 @@
 post:
-  summary: get one comment information
+  summary: get one food information
   tags:
-    - comments
+    - food
   requestBody:
     required: true
     content:
@@ -16,7 +16,7 @@ post:
               type: integer
               format: int32
               example: 6
-              description: comment ID
+              description: food ID
             like:
               type: integer
               format: int32

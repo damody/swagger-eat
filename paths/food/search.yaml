@@ -1,7 +1,7 @@
 post:
-  summary: List all foods
+  summary: List all food
   tags:
-    - foods
+    - food
   requestBody:
     required: true
     content:
@@ -74,12 +74,12 @@ post:
     '200':
       description: |
         All stores in the search range  
-        搜尋範圍內所有餐廳
+        搜尋範圍內所有餐廳與食物
       headers:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/foods.yaml#Foods"
+            $ref: "/schemas/food.yaml#RestaurantFood"
     '500':
       description: unexpected error
       content:

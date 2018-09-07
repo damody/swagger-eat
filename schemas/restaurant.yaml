@@ -1,7 +1,8 @@
 Restaurant:
   description: The Restaurant common data.
   required: 
-    - id
+    - restaurant_id
+    - menu_id
     - name
     - lat
     - lng
@@ -10,11 +11,16 @@ Restaurant:
     - stars
     - distance
   properties:
-    id:
+    restaurant_id:
       type: integer
       example: 3
       format: int32
       description: Restaurant ID
+    menu_id:
+      type: integer
+      example: 7
+      format: int32
+      description: Menu ID
     name:
       type: string
       example: 豪享來
@@ -29,12 +35,12 @@ Restaurant:
       format: float
       example: 121.541108
       description: Longitude, 緯度
-    like:
+    good:
       type: integer
       format: int32
       example: 10
       description: like count, 按讚數
-    dislike:
+    bad:
       type: integer
       format: int32
       example: 1
@@ -66,18 +72,31 @@ Restaurant:
       description: |
         restaurant chains name  
         連鎖店名稱
-Restaurants:
+    open_time:
+      type: string
+      example: 11 a.m.
+      description: |
+        restaurant open time  
+        開店時間
+    close_time:
+      type: string
+      example: 8 p.m.
+      description: |
+        restaurant close time  
+        關店時間
+Restaurant:
   type: array
   items:
     description: |
-      Restaurants array  
+      Restaurant array  
       餐廳陣列
     $ref: "#Restaurant"
 
 RestaurantAll:
   description: The Restaurant common data.
   required: 
-    - id
+    - restaurant_id
+    - menu_id
     - name
     - lat
     - lng
@@ -86,11 +105,24 @@ RestaurantAll:
     - stars
     - pic_url
   properties:
-    id:
+    restaurant_id:
       type: integer
       example: 3
       format: int32
       description: Restaurant ID
+    menu_id:
+      type: integer
+      example: 7
+      format: int32
+      description: Menu ID
+    email:
+      type: string
+      example: nikoniko@gmail.com
+      description: Restaurant email, 店家email
+    phone:
+      type: string
+      example: 0987487087
+      description: phone number, 店家號碼
     name:
       type: string
       example: 豪享來
@@ -105,12 +137,12 @@ RestaurantAll:
       format: float
       example: 121.541108
       description: Longitude, 緯度
-    like:
+    good:
       type: integer
       format: int32
       example: 10
       description: like count, 按讚數
-    dislike:
+    bad:
       type: integer
       format: int32
       example: 1
@@ -125,8 +157,20 @@ RestaurantAll:
       format: int32
       example: 6
       description: |
-        restaurant chains id restaurants  
+        restaurant chains id restaurant  
         連鎖店ID
+    open_time:
+      type: string
+      example: 11 a.m.
+      description: |
+        restaurant open time  
+        開店時間
+    close_time:
+      type: string
+      example: 8 p.m.
+      description: |
+        restaurant close time  
+        關店時間
     pic_url:
       type: array
       description: Picture url, 餐廳圖片網址

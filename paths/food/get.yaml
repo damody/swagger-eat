@@ -1,7 +1,7 @@
 get:
   summary: get one food information
   tags:
-    - foods
+    - food
   parameters:
     - name: foodId
       in: path
@@ -14,13 +14,13 @@ get:
   responses:
     '200':
       description: |
-        All foods in the search range  
+        All food in the search range  
         搜尋範圍內所有餐廳
       headers:
       content:
         application/json:    
           schema:
-            $ref: "/schemas/foods.yaml#FoodAll"
+            $ref: "/schemas/food.yaml#FoodAll"
     '500':
       description: unexpected error
       content:

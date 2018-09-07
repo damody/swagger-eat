@@ -46,13 +46,13 @@ Comment:
 Comments:
   type: object
   required:
-    - comments
+    - comment
   properties:
-    comments:
+    comment:
       type: array
       items:
         description: |
-          Comments array  
+          Comment array  
           會員陣列
         $ref: "#Comment"
 
@@ -107,7 +107,7 @@ CommentAlls:
   type: array
   items:
     description: |
-      Comments array  
+      Comment array  
       會員陣列
     $ref: "#CommentAll"
 
@@ -115,7 +115,7 @@ CommentIDs:
   type: array
   items:
     description: |
-      Comments array  
+      Comment array  
       會員陣列
     type: integer
     format: int32
